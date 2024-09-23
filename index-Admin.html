@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geolocalización</title>
+  <link rel="stylesheet" href="stylesA.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <style>
+    #map { height: 590px; } /* Asegúrate de que el mapa tenga altura */
+  </style>
+</head>
+<body>
+  <h1>Geolocalización</h1>
+
+  <div class="container">
+    <form id="form">
+      <label for="coordinates">Coordenadas:</label>
+      <input type="text" id="coordinates" readonly />
+      <button type="button" id="use-location">Usar mi ubicación</button>
+      <button type="button" id="save">Guardar</button>
+
+      <h2>Agregar Punto</h2>
+      <label for="add-coordinates">Coordenadas:</label>
+      <input type="text" id="add-coordinates" placeholder="lat,lng" />
+      <label for="color">Color del cuadro:</label>
+      <input type="color" id="color" value="#ff0000" />
+      <button type="button" id="add-point">Agregar punto</button>
+
+      <h2>Dibujar Polígono</h2>
+      <label for="polygon-color">Color del polígono:</label>
+      <input type="color" id="polygon-color" value="#3388ff" />
+    </form>
+    <div id="map"></div>
+  </div>
+
+  <div id="table-container">
+    <table id="zone-table">
+      <thead>
+        <tr>
+          <th>Coordenadas</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="index-admin.js"></script>
+</body>
+</html>
